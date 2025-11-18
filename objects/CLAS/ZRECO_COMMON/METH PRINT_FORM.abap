@@ -629,12 +629,12 @@
 
 *    CHECK gv_subrc EQ 0.
 
-    IF gv_otf EQ 'X'.
-      IF iv_output NE 'F'.
-
-      ELSE.
-*          REFRESH gt_body.
-      ENDIF.
+*    IF gv_otf EQ 'X'.
+*      IF iv_output NE 'F'.
+*
+*      ELSE.
+**          REFRESH gt_body.
+*      ENDIF.
 
       ls_random-bukrs     = gs_adrs-bukrs.
       ls_random-mnumber   = lv_number.
@@ -642,7 +642,7 @@
       ls_random-datum     = sy-datum.
       ls_random-uzeit     = sy-uzeit.
 
-    ENDIF.
+*    ENDIF.
 
 
 *    * Notelar
@@ -1418,10 +1418,10 @@
 *          INSERT /itetr/reco_rcai FROM TABLE lt_cform.
 *      ENDIF.
 
-      IF iv_output EQ 'E' OR iv_output EQ 'K'.
+*      IF iv_output EQ 'E' OR iv_output EQ 'K'.
         INSERT zreco_rand FROM @ls_random.
         INSERT zreco_refi FROM TABLE @lt_mail.
-      ENDIF.
+*      ENDIF.
 
 *      IF iv_output EQ 'F'.
 *        INSERT /itetr/reco_refi FROM TABLE lt_mail.
