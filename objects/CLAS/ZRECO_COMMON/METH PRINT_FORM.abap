@@ -1418,10 +1418,10 @@
 *          INSERT /itetr/reco_rcai FROM TABLE lt_cform.
 *      ENDIF.
 
-*      IF iv_output EQ 'E' OR iv_output EQ 'K'.
-*        INSERT /itetr/reco_rand FROM ls_random.
-*        INSERT /itetr/reco_refi FROM TABLE lt_mail.
-*      ENDIF.
+      IF iv_output EQ 'E' OR iv_output EQ 'K'.
+        INSERT zreco_rand FROM @ls_random.
+        INSERT zreco_refi FROM TABLE @lt_mail.
+      ENDIF.
 
 *      IF iv_output EQ 'F'.
 *        INSERT /itetr/reco_refi FROM TABLE lt_mail.
