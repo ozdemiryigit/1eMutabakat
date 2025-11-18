@@ -982,39 +982,39 @@
     ENDIF.
 
     IF lv_adres_1 IS NOT INITIAL.
-      CONCATENATE ls_data-sirket_adres '\n' lv_adres_1 INTO ls_data-sirket_adres SEPARATED BY space.
+      CONCATENATE ls_data-sirket_adres cl_abap_char_utilities=>cr_lf lv_adres_1 INTO ls_data-sirket_adres SEPARATED BY space.
     ENDIF.
 
     IF lv_adres_2 IS NOT INITIAL.
-      CONCATENATE ls_data-sirket_adres '\n' lv_adres_2 INTO ls_data-sirket_adres SEPARATED BY space.
+      CONCATENATE ls_data-sirket_adres cl_abap_char_utilities=>cr_lf lv_adres_2 INTO ls_data-sirket_adres SEPARATED BY space.
     ENDIF.
 
     IF lv_telefon IS NOT INITIAL.
-      CONCATENATE ls_data-sirket_adres '\n' lv_telefon INTO ls_data-sirket_adres SEPARATED BY space.
+      CONCATENATE ls_data-sirket_adres cl_abap_char_utilities=>cr_lf lv_telefon INTO ls_data-sirket_adres SEPARATED BY space.
     ENDIF.
 
     IF lv_faks IS NOT INITIAL.
-      CONCATENATE ls_data-sirket_adres '\n' lv_faks INTO ls_data-sirket_adres SEPARATED BY space.
+      CONCATENATE ls_data-sirket_adres cl_abap_char_utilities=>cr_lf lv_faks INTO ls_data-sirket_adres SEPARATED BY space.
     ENDIF.
 
     IF lv_vd_vkn IS NOT INITIAL.
-      CONCATENATE ls_data-sirket_adres '\n' lv_vd_vkn INTO ls_data-sirket_adres SEPARATED BY space.
+      CONCATENATE ls_data-sirket_adres cl_abap_char_utilities=>cr_lf lv_vd_vkn INTO ls_data-sirket_adres SEPARATED BY space.
     ENDIF.
 
     IF lv_tsicil IS NOT INITIAL.
-      CONCATENATE ls_data-sirket_adres '\n' lv_tsicil INTO ls_data-sirket_adres SEPARATED BY space.
+      CONCATENATE ls_data-sirket_adres cl_abap_char_utilities=>cr_lf lv_tsicil INTO ls_data-sirket_adres SEPARATED BY space.
     ENDIF.
 
     IF lv_mersis IS NOT INITIAL.
-      CONCATENATE ls_data-sirket_adres '\n' lv_mersis INTO ls_data-sirket_adres SEPARATED BY space.
+      CONCATENATE ls_data-sirket_adres cl_abap_char_utilities=>cr_lf lv_mersis INTO ls_data-sirket_adres SEPARATED BY space.
     ENDIF.
 
     IF lv_ilgili_adi IS NOT INITIAL.
-      CONCATENATE ls_data-sirket_adres '\n' lv_ilgili_adi INTO ls_data-sirket_adres SEPARATED BY space.
+      CONCATENATE ls_data-sirket_adres cl_abap_char_utilities=>cr_lf lv_ilgili_adi INTO ls_data-sirket_adres SEPARATED BY space.
     ENDIF.
 
     IF lv_ilgili_telefon IS NOT INITIAL.
-      CONCATENATE ls_data-sirket_adres '\n' lv_ilgili_telefon INTO ls_data-sirket_adres SEPARATED BY space.
+      CONCATENATE ls_data-sirket_adres cl_abap_char_utilities=>cr_lf lv_ilgili_telefon INTO ls_data-sirket_adres SEPARATED BY space.
     ENDIF.
 
 
@@ -1243,42 +1243,42 @@
 
     "lv_name2
     IF lv_name2 IS NOT INITIAL.
-      CONCATENATE ls_data-cari_adres '\n' lv_name2 INTO ls_data-cari_adres SEPARATED BY space.
+      CONCATENATE ls_data-cari_adres cl_abap_char_utilities=>cr_lf lv_name2 INTO ls_data-cari_adres SEPARATED BY space.
     ENDIF.
 
     "lv_vd
     IF lv_vd IS NOT INITIAL.
-      CONCATENATE ls_data-cari_adres '\n' lv_vd INTO ls_data-cari_adres SEPARATED BY space.
+      CONCATENATE ls_data-cari_adres cl_abap_char_utilities=>cr_lf lv_vd INTO ls_data-cari_adres SEPARATED BY space.
     ENDIF.
 
     "lv_vkn_tckn
     IF lv_vkn_tckn IS NOT INITIAL.
-      CONCATENATE ls_data-cari_adres '\n' lv_vkn_tckn INTO ls_data-cari_adres SEPARATED BY space.
+      CONCATENATE ls_data-cari_adres cl_abap_char_utilities=>cr_lf lv_vkn_tckn INTO ls_data-cari_adres SEPARATED BY space.
     ENDIF.
 
     "lv_telf1
     IF lv_telf1 IS NOT INITIAL.
-      CONCATENATE ls_data-cari_adres '\n' lv_telf1 INTO ls_data-cari_adres SEPARATED BY space.
+      CONCATENATE ls_data-cari_adres cl_abap_char_utilities=>cr_lf lv_telf1 INTO ls_data-cari_adres SEPARATED BY space.
     ENDIF.
 
     "lv_name3
     IF lv_name3 IS NOT INITIAL.
-      CONCATENATE ls_data-cari_adres '\n' lv_name3 INTO ls_data-cari_adres SEPARATED BY space.
+      CONCATENATE ls_data-cari_adres cl_abap_char_utilities=>cr_lf lv_name3 INTO ls_data-cari_adres SEPARATED BY space.
     ENDIF.
 
     "lv_name4
     IF lv_name4 IS NOT INITIAL.
-      CONCATENATE ls_data-cari_adres '\n' lv_name4 INTO ls_data-cari_adres SEPARATED BY space.
+      CONCATENATE ls_data-cari_adres cl_abap_char_utilities=>cr_lf lv_name4 INTO ls_data-cari_adres SEPARATED BY space.
     ENDIF.
 
     "lv_cari_adres_1
     IF lv_cari_adres_1 IS NOT INITIAL.
-      CONCATENATE ls_data-cari_adres '\n' lv_cari_adres_1 INTO ls_data-cari_adres SEPARATED BY space.
+      CONCATENATE ls_data-cari_adres cl_abap_char_utilities=>cr_lf lv_cari_adres_1 INTO ls_data-cari_adres SEPARATED BY space.
     ENDIF.
 
     "lv_cari_adres_2
     IF lv_cari_adres_2 IS NOT INITIAL.
-      CONCATENATE ls_data-cari_adres '\n' lv_cari_adres_2 INTO ls_data-cari_adres SEPARATED BY space.
+      CONCATENATE ls_data-cari_adres cl_abap_char_utilities=>cr_lf lv_cari_adres_2 INTO ls_data-cari_adres SEPARATED BY space.
     ENDIF.
 
     """""""""""""" Müşteri Bilgileri
