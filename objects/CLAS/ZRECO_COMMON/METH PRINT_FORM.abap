@@ -1064,12 +1064,12 @@
 
 *    IF gs_flds-name4_use IS INITIAL.
 *      IF gs_flds-name4_x IS NOT INITIAL..
-    lv_name4 = gs_adrc-OrganizationName4.
+*    lv_name4 = gs_adrc-OrganizationName4.
 *      ENDIF.
 *    ELSE.
 *      IF gs_flds-name4_x IS NOT INITIAL.
-    CONCATENATE lv_cari_adres_1 gs_adrc-OrganizationName4 INTO lv_cari_adres_1
-    SEPARATED BY space.
+*    CONCATENATE lv_cari_adres_1 gs_adrc-OrganizationName4 INTO lv_cari_adres_1
+*    SEPARATED BY space.
 *      ENDIF.
 *    ENDIF.
 

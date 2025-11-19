@@ -1045,12 +1045,12 @@
 
 *    IF gs_flds-name4_use IS INITIAL.
 *      IF gs_flds-name4_x IS NOT INITIAL..
-      lv_name4 = gs_adrc-OrganizationName4.
+*      lv_name4 = gs_adrc-OrganizationName4.
 *      ENDIF.
 *    ELSE.
 *      IF gs_flds-name4_x IS NOT INITIAL.
-      CONCATENATE lv_cari_adres_1 gs_adrc-OrganizationName4 INTO lv_cari_adres_1
-      SEPARATED BY space.
+*      CONCATENATE lv_cari_adres_1 gs_adrc-OrganizationName4 INTO lv_cari_adres_1
+*      SEPARATED BY space.
 *      ENDIF.
 *    ENDIF.
 
@@ -1247,10 +1247,10 @@
         CONCATENATE ls_data-cari_adres cl_abap_char_utilities=>cr_lf lv_name3 INTO ls_data-cari_adres SEPARATED BY space.
       ENDIF.
 
-      "lv_name4
-      IF lv_name4 IS NOT INITIAL.
-        CONCATENATE ls_data-cari_adres cl_abap_char_utilities=>cr_lf lv_name4 INTO ls_data-cari_adres SEPARATED BY space.
-      ENDIF.
+*      "lv_name4
+*      IF lv_name4 IS NOT INITIAL.
+*        CONCATENATE ls_data-cari_adres cl_abap_char_utilities=>cr_lf lv_name4 INTO ls_data-cari_adres SEPARATED BY space.
+*      ENDIF.
 
       "lv_cari_adres_1
       IF lv_cari_adres_1 IS NOT INITIAL.
