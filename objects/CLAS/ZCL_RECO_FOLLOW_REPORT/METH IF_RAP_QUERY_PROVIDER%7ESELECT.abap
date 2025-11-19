@@ -184,7 +184,7 @@
                     high   = ls_range-high ) TO salma.
               ENDLOOP.
 
-            WHEN 's_SMKOD'.
+            WHEN 'S_SMKOD'.
               LOOP AT condition-range INTO ls_range.
                 APPEND VALUE #( sign   = ls_range-sign
                     option = ls_range-option
