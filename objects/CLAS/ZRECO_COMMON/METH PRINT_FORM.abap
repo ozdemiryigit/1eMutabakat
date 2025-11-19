@@ -1395,9 +1395,6 @@
                      ).
 
 
-      INSERT zreco_hdr FROM @ls_head.
-
-
       SELECT single *
       FROM i_businesspartner
       WHERE businesspartner =   @ls_out-hesap_no
@@ -1407,6 +1404,7 @@
           ls_head-salma = ls_businesspartner-BusinessPartnerGrouping.
         ENDIF.
 
+      INSERT zreco_hdr FROM @ls_head.
 
         MOVE-CORRESPONDING ls_head TO ls_fpdf.
         ls_fpdf-pdf_file = lv_pdfbase64.

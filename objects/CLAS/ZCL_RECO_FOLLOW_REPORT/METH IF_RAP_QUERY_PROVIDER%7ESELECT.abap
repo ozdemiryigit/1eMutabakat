@@ -184,7 +184,7 @@
                     high   = ls_range-high ) TO salma.
               ENDLOOP.
 
-            WHEN 'SMKOD'.
+            WHEN 's_SMKOD'.
               LOOP AT condition-range INTO ls_range.
                 APPEND VALUE #( sign   = ls_range-sign
                     option = ls_range-option
@@ -222,6 +222,8 @@
     iv_bal          = bal
     it_del          = del
     iv_all          = all
+    it_salma        = salma
+    it_smkod        = smkod
     ).
 
 *    me->partner_selection(             "YiğitcanÖzdemir ~???
