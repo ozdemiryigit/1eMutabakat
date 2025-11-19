@@ -1611,19 +1611,17 @@
       WHERE BusinessPartnerGrouping = @p_salma
       INTO TABLE @DATA(lt_businesspartner).
 
-      LOOP AT gt_lfa1_tax ASSIGNING FIELD-SYMBOL(<ls_tax>).
-        READ TABLE lt_businesspartner WITH KEY businesspartner = <ls_tax>-lifnr TRANSPORTING NO FIELDS.
-        IF sy-subrc <> 0.
-          DELETE gt_lfa1_tax INDEX sy-tabix.
-        ENDIF.
+      DATA lr_bp TYPE RANGE OF i_businesspartner-businesspartner.
+
+      LOOP AT lt_businesspartner ASSIGNING FIELD-SYMBOL(<bp>).
+        APPEND VALUE #( sign = 'I'
+                        option = 'EQ'
+                        low = <bp>-businesspartner ) TO lr_bp.
       ENDLOOP.
 
-      LOOP AT gt_kna1_tax ASSIGNING FIELD-SYMBOL(<ls_kna1>).
-        READ TABLE lt_businesspartner WITH KEY businesspartner = <ls_kna1>-kunnr TRANSPORTING NO FIELDS.
-        IF sy-subrc <> 0.
-          DELETE gt_kna1_tax INDEX sy-tabix.
-        ENDIF.
-      ENDLOOP.
+      DELETE gt_lfa1_tax WHERE lifnr NOT IN lr_bp.
+      DELETE gt_kna1_tax WHERE kunnr NOT IN lr_bp.
+
     ENDIF.
 
     """YiğitcanÖzdemir "SmKodu&Satınalma grubu geliştirmesi
