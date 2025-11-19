@@ -1606,9 +1606,9 @@
 
     """YiğitcanÖzdemir "SmKodu&Satınalma grubu geliştirmesi
 
-    IF p_salma IS NOT INITIAL.
+    IF s_salma IS NOT INITIAL.
       SELECT businesspartner FROM i_businesspartner
-      WHERE BusinessPartnerGrouping = @p_salma
+      WHERE BusinessPartnerGrouping in @s_salma
       INTO TABLE @DATA(lt_businesspartner).
 
       DATA lr_bp TYPE RANGE OF i_businesspartner-businesspartner.
@@ -1633,9 +1633,9 @@
 
     CLEAR : lr_bp.
 
-    IF p_smkod IS NOT INITIAL.
+    IF s_smkod IS NOT INITIAL.
       SELECT businesspartner FROM i_businesspartner
-      WHERE searchterm1 = @p_smkod
+      WHERE searchterm1 in @s_smkod
       INTO TABLE @DATA(lt_businesspartner2).
 
 
