@@ -19,6 +19,8 @@
           odk          TYPE RANGE OF abap_boolean,
           bal          TYPE abap_boolean,
           all          TYPE abap_boolean,  "YiğitcanÖzdemir
+          salma        TYPE RANGE OF zreco_salma,  "YiğitcanÖzdemir
+          smkod        TYPE RANGE OF zreco_smkod,  "YiğitcanÖzdemir
           del          TYPE RANGE OF abap_boolean.
 
 
@@ -173,6 +175,24 @@
 
             WHEN 'P_ALL'.   "YiğitcanÖzdemir
               all        = VALUE #( condition-range[ 1 ]-low OPTIONAL ).
+
+            WHEN 'S_SALMA'.
+              LOOP AT condition-range INTO ls_range.
+                APPEND VALUE #( sign   = ls_range-sign
+                    option = ls_range-option
+                    low    = ls_range-low
+                    high   = ls_range-high ) TO salma.
+              ENDLOOP.
+
+            WHEN 'SMKOD'.
+              LOOP AT condition-range INTO ls_range.
+                APPEND VALUE #( sign   = ls_range-sign
+                    option = ls_range-option
+                    low    = ls_range-low
+                    high   = ls_range-high ) TO smkod.
+              ENDLOOP.
+
+
 
           ENDCASE.
         ENDLOOP.

@@ -636,11 +636,11 @@
 **          REFRESH gt_body.
 *      ENDIF.
 
-      ls_random-bukrs     = gs_adrs-bukrs.
-      ls_random-mnumber   = lv_number.
-      ls_random-randomkey = lv_random.
-      ls_random-datum     = sy-datum.
-      ls_random-uzeit     = sy-uzeit.
+    ls_random-bukrs     = gs_adrs-bukrs.
+    ls_random-mnumber   = lv_number.
+    ls_random-randomkey = lv_random.
+    ls_random-datum     = sy-datum.
+    ls_random-uzeit     = sy-uzeit.
 
 *    ENDIF.
 
@@ -1398,11 +1398,21 @@
       INSERT zreco_hdr FROM @ls_head.
 
 
-      MOVE-CORRESPONDING ls_head TO ls_fpdf.
-      ls_fpdf-pdf_file = lv_pdfbase64.
-      INSERT zreco_fpdf FROM @ls_fpdf.
+      SELECT single *
+      FROM i_businesspartner
+      WHERE businesspartner =   @ls_out-hesap_no
+      INTO @DATA(ls_businesspartner).
+        IF ls_businesspartner IS NOT INITIAL.
+          ls_head-smkod = ls_businesspartner-SearchTerm1.
+          ls_head-salma = ls_businesspartner-BusinessPartnerGrouping.
+        ENDIF.
 
-      INSERT zreco_vers FROM @ls_vers.
+
+        MOVE-CORRESPONDING ls_head TO ls_fpdf.
+        ls_fpdf-pdf_file = lv_pdfbase64.
+        INSERT zreco_fpdf FROM @ls_fpdf.
+
+        INSERT zreco_vers FROM @ls_vers.
 
 *      IF p_waers IS NOT INITIAL.
 *        INSERT Zreco_rboc FROM ls_curr.
@@ -1413,7 +1423,7 @@
 *      ENDIF.
 *
 *      IF r_bform IS INITIAL.
-      MODIFY Zreco_rcai FROM TABLE @lt_cform.
+        MODIFY Zreco_rcai FROM TABLE @lt_cform.
 *        COMMIT WORK AND WAIT.
 *          INSERT /itetr/reco_rcai FROM TABLE lt_cform.
 *      ENDIF.
@@ -1432,6 +1442,6 @@
 *      ENDIF.
 
 *
-    ENDIF.
+      ENDIF.
 
-  ENDMETHOD.
+    ENDMETHOD.

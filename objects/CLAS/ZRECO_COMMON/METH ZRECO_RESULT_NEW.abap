@@ -167,7 +167,7 @@
               AND version EQ @ls_version-version
               INTO CORRESPONDING FIELDS OF TABLE @lt_cform.
             LOOP AT lt_cform ASSIGNING FIELD-SYMBOL(<lt_cform>).
-              LOOP AT et_cform into data(es_cform).
+              LOOP AT et_cform INTO DATA(es_cform).
                 EXIT.
               ENDLOOP.
               <lt_cform>-responder_name = es_cform-responder_name.
