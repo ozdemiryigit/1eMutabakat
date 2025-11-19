@@ -1624,6 +1624,27 @@
 
     ENDIF.
 
+
+    CLEAR : lr_bp.
+
+    IF p_smkod IS NOT INITIAL.
+      SELECT businesspartner FROM i_businesspartner
+      WHERE searchterm1 = @p_smkod
+      INTO TABLE @DATA(lt_businesspartner2).
+
+
+      LOOP AT lt_businesspartner2 ASSIGNING FIELD-SYMBOL(<bp2>).
+        APPEND VALUE #( sign = 'I'
+                        option = 'EQ'
+                        low = <bp2>-businesspartner ) TO lr_bp.
+      ENDLOOP.
+
+      DELETE gt_lfa1_tax WHERE lifnr NOT IN lr_bp.
+      DELETE gt_kna1_tax WHERE kunnr NOT IN lr_bp.
+
+    ENDIF.
+
+
     """YiğitcanÖzdemir "SmKodu&Satınalma grubu geliştirmesi
 
 
