@@ -1619,6 +1619,12 @@
                         low = <bp>-businesspartner ) TO lr_bp.
       ENDLOOP.
 
+      IF lr_bp IS INITIAL.
+        APPEND VALUE #( sign = 'I'
+                  option = 'EQ'
+                  low = '' ) TO lr_bp.
+      ENDIF.
+
       DELETE gt_lfa1_tax WHERE lifnr NOT IN lr_bp.
       DELETE gt_kna1_tax WHERE kunnr NOT IN lr_bp.
 
@@ -1638,6 +1644,12 @@
                         option = 'EQ'
                         low = <bp2>-businesspartner ) TO lr_bp.
       ENDLOOP.
+
+      IF lr_bp IS INITIAL.
+        APPEND VALUE #( sign = 'I'
+                  option = 'EQ'
+                  low = '' ) TO lr_bp.
+      ENDIF.
 
       DELETE gt_lfa1_tax WHERE lifnr NOT IN lr_bp.
       DELETE gt_kna1_tax WHERE kunnr NOT IN lr_bp.
