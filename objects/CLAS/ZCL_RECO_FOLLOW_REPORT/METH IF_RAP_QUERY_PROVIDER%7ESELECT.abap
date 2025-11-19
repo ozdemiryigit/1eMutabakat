@@ -178,6 +178,9 @@
         ENDLOOP.
       CATCH cx_rap_query_filter_no_range.
     ENDTRY.
+
+    p_all = 'X'. "YiğitcanÖzdemir
+
     me->get_data(
     iv_bukrs        = company_code
     it_reco_form    = reco_form
