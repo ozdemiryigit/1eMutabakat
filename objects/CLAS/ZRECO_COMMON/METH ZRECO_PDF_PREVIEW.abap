@@ -958,9 +958,9 @@
 
       "Her bir alan doluysa başına \n ekle ve CONCATENATE ile birleştir
 
-      IF lv_unvan IS NOT INITIAL.
-        ls_data-sirket_adres = lv_unvan.
-      ENDIF.
+*      IF lv_unvan IS NOT INITIAL.
+*        ls_data-sirket_adres = lv_unvan.
+*      ENDIF.
 
       IF lv_adres_1 IS NOT INITIAL.
         CONCATENATE ls_data-sirket_adres cl_abap_char_utilities=>cr_lf lv_adres_1 INTO ls_data-sirket_adres SEPARATED BY space.

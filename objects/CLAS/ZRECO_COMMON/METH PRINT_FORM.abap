@@ -1216,13 +1216,13 @@
 
     ENDIF.
 
-    IF gs_flds-tax_office_x IS INITIAL.
-      CLEAR lv_vd.
-    ENDIF.
+*    IF gs_flds-tax_office_x IS INITIAL.
+*      CLEAR lv_vd.
+*    ENDIF.
 
-    IF gs_flds-tax_number_x IS INITIAL.
-      CLEAR lv_vkn_tckn.
-    ENDIF.
+*    IF gs_flds-tax_number_x IS INITIAL.
+*      CLEAR lv_vkn_tckn.
+*    ENDIF.
 
 *    ENDIF.
 
@@ -1238,7 +1238,7 @@
 
     "lv_name1
 *    IF lv_name1 IS NOT INITIAL.
-*      ls_data-cari_adres = lv_name1.
+    ls_data-cari_adres = lv_name1.
 *    ENDIF.
 
     "lv_name2
@@ -1300,7 +1300,7 @@
 *          day_in_no_date    = 1
     ).
 
-
+    ls_data-duzenleme_tarihi = cl_abap_context_info=>get_system_date( ).
 *    ls_data-takip            = lv_number.
     ls_data-mutabakat_tarihi = |{ gv_last_date+6(2) }.{ gv_last_date+4(2) }.{ gv_last_date+0(4) }|.
     ls_data-cari_no          = gs_account-hesap_no.
