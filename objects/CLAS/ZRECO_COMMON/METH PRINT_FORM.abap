@@ -1237,14 +1237,14 @@
 *    SEPARATED BY space.
 
     "lv_name1
-    IF lv_name1 IS NOT INITIAL.
-      ls_data-cari_adres = lv_name1.
-    ENDIF.
+*    IF lv_name1 IS NOT INITIAL.
+*      ls_data-cari_adres = lv_name1.
+*    ENDIF.
 
     "lv_name2
-    IF lv_name2 IS NOT INITIAL.
-      CONCATENATE ls_data-cari_adres cl_abap_char_utilities=>cr_lf lv_name2 INTO ls_data-cari_adres ."SEPARATED BY space.
-    ENDIF.
+*    IF lv_name2 IS NOT INITIAL.
+*      CONCATENATE ls_data-cari_adres cl_abap_char_utilities=>cr_lf lv_name2 INTO ls_data-cari_adres ."SEPARATED BY space.
+*    ENDIF.
 
     "lv_vd
     IF lv_vd IS NOT INITIAL.
